@@ -1,3 +1,17 @@
+#' Adjacency Spectral Embedding
+#'
+#' The eigendecomposition of an adjacency matrix provides a way to embed a graph  as points in finite dimensional Euclidean space.  This embedding allows the full arsenal of statistical and machine learning methodology  for multivariate Euclidean data to be deployed for graph inference. Adjacency Spectral Embedding performs this embedding of matrix A into dim dimensions.
+# @seealso
+#' @param A matrix, an adjacency matrix that used for eigendecomposition
+#' @param dims dimensions for which the Euclidean space is defined
+#' @return Adjacency Spectral Embedding
+# @seealso
+# @export
+#' @examples
+#' N <- 200
+#' A <- matrix(data = runif(N*N), ncol = N, nrow = N)
+#' dims <- 15
+#' A_embed <- ase(A, dims)
 ase <- function(A, dims){
   if(nrow(A) >= 400){
     require(irlba)
